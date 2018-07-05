@@ -12,8 +12,9 @@ class AppServiceProvider extends ServiceProvider
      * @return void
      */
     public function boot()
-    {
-        //
+    { 
+      //スキーマのセット
+      \Schema::defaultStringLength(191);
     }
 
     /**
