@@ -1,9 +1,5 @@
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>[Thu Jul  5 06:12:31 2018] 127.0.0.1:47976 [200]: /favicon.ico
-<!------ Include the above in your HEAD tag ---------->
-
-<div class="col-lg-6 col-sm-6">
+@extends('layouts.app')
+@section('content')
     <div class="card hovercard">
         <div class="card-background">
             <img class="card-bkimg" alt="" src="http://lorempixel.com/100/100/people/9/">
@@ -31,3 +27,5 @@
     </div>
 
 </div>
+
+@endsection
