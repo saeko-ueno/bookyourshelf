@@ -15,7 +15,11 @@ class BooksController extends Controller
      */
     public function index()
     {
-        //
+        $userId=\Auth::id();
+     $books = \DB::table('books')->where('user_id', $userId)->orderBy('created_at', 'DESC')->take(10)->get();
+       
+        return view ('books.index',[
+            'books'=>$books,]);
     }
 
     /**
@@ -72,7 +76,13 @@ class BooksController extends Controller
      */
     public function show($id)
     {
-        //
+        
+        $book = Book::find($id);
+
+        return view('books.show', [
+            'book' => $book,
+        ]);
+    
     }
 
     /**
@@ -119,6 +129,9 @@ class BooksController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $book = Book::find($id);
+        $book->delete();
+
+        return view('users.show');
     }
 }
