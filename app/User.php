@@ -8,6 +8,11 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 class User extends Authenticatable
 {
     use Notifiable;
+    
+    //bookモデルとの関係
+    public function books(){
+        return  $this->hasMany(Book::class);
+    }
 
     /**
      * The attributes that are mass assignable.
