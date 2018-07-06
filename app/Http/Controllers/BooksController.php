@@ -83,7 +83,10 @@ class BooksController extends Controller
      */
     public function edit($id)
     {
-        //
+        $book = Book::find($id);
+        
+        return view ('books.edit',[
+            'book'=>$book,]);
     }
 
     /**
@@ -95,7 +98,17 @@ class BooksController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $book = Book::find($id);
+        
+        $book->image_url = $request->image_url;
+        $book->author = $request->author;
+        $book->title = $request->title;
+        $book->comment = $request->comment;
+        $book->recommend = $request->recommend;
+        $book->tradable = $request->tradable;
+        $book->save();
+        
+        return view('users.show');
     }
 
     /**
